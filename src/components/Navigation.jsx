@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
-import { Collapse, Button, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Collapse, Button, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 export default class AppNavbar extends Component {
-  constructor(props) {
+    constructor(props) {
     super(props);
-    this.state = {isOpen: false};
-    this.toggle = this.toggle.bind(this);
+
+    this.toggleNav = this.toggleNav.bind(this);
+    this.state = {
+      isNavOpen: false,
+    };
+      this.toggleNav = this.toggleNav.bind(this);
+
   }
 
-  toggle() {
+
+   toggleNav() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isNavOpen: !this.state.isNavOpen,
     });
   }
 
@@ -27,8 +33,8 @@ export default class AppNavbar extends Component {
               alt="NFM Indoor"
             /> NFM Indoor
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggleNav} />
-          <Collapse isOpen={this.state.isNavOpen} navbar>
+         <NavbarToggler onClick={this.toggleNav} />
+            <Collapse isOpen={this.state.isNavOpen} navbar>
             <Nav navbar>
               <NavItem>
                 <NavLink className="nav-link" to="/home">

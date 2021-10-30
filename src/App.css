@@ -49,7 +49,9 @@ align-items: center;
 }
 
 
-
+li{
+  color: white;
+}
 
 @media only screen and (max-width: 600px) {
   .hero{height: 50vh;
